@@ -1,18 +1,57 @@
-## Getting Started
+# Currency Converter
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Una aplicación de consola escrita en Java para convertir monedas usando una API externa.  
+Permite al usuario elegir las monedas de origen/destino, ingresar un monto, ver el resultado, y además mantiene un histórico de conversiones con marca de tiempo.
 
-## Folder Structure
+## 📝 Características
 
-The workspace contains two folders by default, where:
+- Selección de moneda origen y destino mediante menú interactivo.  
+- Conversión de montos reales llamando a una API de cambio de divisas.  
+- Estructura modular: separación entre modelo (`model/`), Manejo de errores (`exception/`) API cliente (`api/`), lógica de negocio (`service/`), interfaz de usuario/menu (`ui/`) y clase principal `Main.java`.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## 📦 Estructura del proyecto
+### 📁 api/
+Conexión con la API externa.  
+Encargado de manejar peticiones HTTP y parsear la respuesta JSON.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### 📁 exception/
+Manejo de errores personalizados mediante `ApiException`.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+### 📁 main/
+Punto de entrada de la aplicación.  
+`App.java` inicia el menú y prepara los servicios necesarios.
 
-## Dependency Management
+### 📁 model/
+Modelos de datos que representan solicitudes y respuestas de conversión.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+### 📁 service/
+Contiene la lógica de negocio.  
+`CurrencyService.java` coordina conversiones y validaciones.
+
+### 📁 ui/
+Interacción con el usuario mediante línea de comandos.  
+`Menu.java` imprime el menú, solicita datos y muestra resultados.
+
+## 🛠 Requisitos
+
+- Java 11 o superior.
+- Una **API Key** válida para el servicio de cambio de divisas.
+- Conexión a Internet para que la aplicación pueda llamar a la API externa.
+
+## 🚀 Cómo ejecutar
+
+1. Clona este repositorio  
+   ```bash
+   git clone https://github.com/juandavidpardo9/currency-converter.git
+
+    Abre el proyecto en tu IDE favorito (IntelliJ IDEA, Eclipse, VS Code…)
+
+    Ajusta el valor de la API Key en el archivo App.java
+
+String apiKey = "TU_API_KEY_AQUI";
+CurrencyService service = new CurrencyService(apiKey);
+
+Ejecuta la clase Main.java
+
+Usa el menú para seleccionar la conversión deseada, ingresa el monto, y observa el resultado.
+
