@@ -44,14 +44,14 @@ Interacción con el usuario mediante línea de comandos.
    ```bash
    git clone https://github.com/juandavidpardo9/currency-converter.git
 
-    Abre el proyecto en tu IDE favorito (IntelliJ IDEA, Eclipse, VS Code…)
+2. Abre el proyecto en tu IDE (IntelliJ IDEA, Eclipse, VS Code…)
 
-    Ajusta el valor de la API Key en el archivo App.java
+3. Ajusta el valor de la API Key en el archivo App.java
+    ```java
+    String apiKey = "TU_API_KEY_AQUI";
+    CurrencyService service = new CurrencyService(apiKey);
 
-String apiKey = "TU_API_KEY_AQUI";
-CurrencyService service = new CurrencyService(apiKey);
+4. Ejecuta la clase Main.java
 
-Ejecuta la clase Main.java
-
-Usa el menú para seleccionar la conversión deseada, ingresa el monto, y observa el resultado.
+5. Usa el menú para seleccionar la conversión deseada, ingresa el monto, y observa el resultado.
 
