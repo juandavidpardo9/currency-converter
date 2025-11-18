@@ -1,6 +1,7 @@
 package main;
 
 import service.CurrencyService;
+import ui.Menu;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -9,8 +10,7 @@ public class App {
 
         CurrencyService service = new CurrencyService(apiKey);
 
-        double result = service.convert("USD", "COP", 1);
-
-        System.out.println("Resultado: " + result);
+        Menu menu = new Menu(service);
+        menu.iniciar();
     }
 }
